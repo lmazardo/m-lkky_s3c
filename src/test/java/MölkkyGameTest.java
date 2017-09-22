@@ -10,7 +10,7 @@ public class MölkkyGameTest {
 
         game.knockOut(3);
 
-        assertEquals(game.score(), 3);
+        assertEquals(3, game.score());
    }
     @Test
     public void canKnockOutThe5thPin() {
@@ -18,7 +18,7 @@ public class MölkkyGameTest {
 
         game.knockOut(5);
 
-        assertEquals(game.score(), 5);
+        assertEquals(5, game.score());
     }
 
     @Test
@@ -27,7 +27,28 @@ public class MölkkyGameTest {
 
         game.knockOut(3, 4);
 
-        assertEquals(game.score(), 2);
+        assertEquals(2, game.score());
+
+    }
+
+    @Test
+    public void canKnockOutTwice() {
+        MölkkyGame game = new MölkkyGame();
+
+        game.knockOut(3, 4);
+        game.knockOut(3, 4);
+
+        assertEquals(4, game.score());
+
+    }
+    @Test
+    public void canKnockOutTwice2() {
+        MölkkyGame game = new MölkkyGame();
+
+        game.knockOut(3, 4);
+        game.knockOut(3);
+
+        assertEquals(5, game.score());
 
     }
 }

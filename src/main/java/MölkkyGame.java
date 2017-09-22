@@ -19,5 +19,5 @@ public class MölkkyGame {
        return score;
     }
 
-    private int score = 5;
+    private int score = 0;
 }
